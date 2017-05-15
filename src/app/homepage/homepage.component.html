@@ -1,3 +1,54 @@
 <p>
   homepage works!
 </p>
+
+<div class="example-container">
+  <h3>Normal Buttons</h3>
+  <div class="button-row">
+    <button md-button>Flat button</button>
+    <button md-raised-button>Raised button</button>
+    <button md-fab><md-icon>check</md-icon></button>
+    <button md-mini-fab><md-icon>check</md-icon></button>
+  </div>
+
+  <h3>Link Buttons</h3>
+  <div class="example-button-row">
+    <a md-button routerLink=".">Flat button</a>
+    <a md-raised-button routerLink=".">Raised button</a>
+    <a md-fab routerLink="."><md-icon>check</md-icon></a>
+    <a md-mini-fab routerLink="."><md-icon>check</md-icon></a>
+  </div>
+</div>
+
+
+<span mdTooltip="Tooltip!" mdTooltipPosition="right">I have a tooltip</span>
+<br>
+
+<div class="example-tooltip-host" mdTooltip="Tooltip!" [mdTooltipPosition]="position">
+  <span>Show tooltip</span>
+  <md-select class="example-select" [(ngModel)]="position">
+    <md-option value="before">Before</md-option>
+    <md-option value="after">After</md-option>
+    <md-option value="above">Above</md-option>
+    <md-option value="below">Below</md-option>
+    <md-option value="left">Left</md-option>
+    <md-option value="right">Right</md-option>
+  </md-select>
+</div>
+
+<md-grid-list cols="2" rowHeight="2:1">
+  <md-grid-tile>1</md-grid-tile>
+  <md-grid-tile>2</md-grid-tile>
+  <md-grid-tile>3</md-grid-tile>
+  <md-grid-tile>4</md-grid-tile>
+</md-grid-list>
+
+<md-grid-list cols="4" rowHeight="100px">
+  <md-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color">
+    {{tile.text}}
+  </md-grid-tile>
+</md-grid-list>

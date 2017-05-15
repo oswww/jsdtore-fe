@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UsedMaterialModule } from './modules/material.module';
+import 'hammerjs'
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -16,8 +20,10 @@ import { HomepageComponent } from './homepage/homepage.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
-  ],
+    HttpModule,
+    BrowserAnimationsModule,
+    UsedMaterialModule,
+  ],   
   providers: [],
   bootstrap: [AppComponent]
 })
