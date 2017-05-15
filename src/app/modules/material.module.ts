@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import {
-  MdIconModule,
   MdButtonModule,
   MdCheckboxModule,
-  MdTooltipModule,
-  MdSelectModule,
   MdGridListModule,
+  MdIconModule,
+  MdSelectModule,
+  MdTooltipModule,
 } from '@angular/material';
 
 
@@ -14,18 +14,18 @@ import {
     // Angular Material https://material.angular.io/guide/getting-started
     MdButtonModule,
     MdCheckboxModule,
-    MdIconModule,
-    MdTooltipModule,
-    MdSelectModule,
     MdGridListModule,
+    MdIconModule,
+    MdSelectModule,
+    MdTooltipModule,
   ],
   exports: [
-    MdIconModule,
     MdButtonModule,
     MdCheckboxModule,
-    MdTooltipModule,
-    MdSelectModule,
     MdGridListModule,
+    MdIconModule,
+    MdSelectModule,
+    MdTooltipModule,
   ],
 })
 export class UsedMaterialModule {}
