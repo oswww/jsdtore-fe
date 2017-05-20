@@ -4,7 +4,9 @@ import {
   MdCheckboxModule,
   MdGridListModule,
   MdIconModule,
+  MdMenuModule,
   MdSelectModule,
+  MdToolbarModule,
   MdTooltipModule,
 } from '@angular/material';
 
@@ -16,7 +18,9 @@ import {
     MdCheckboxModule,
     MdGridListModule,
     MdIconModule,
+    MdMenuModule,
     MdSelectModule,
+    MdToolbarModule,
     MdTooltipModule,
   ],
   exports: [
@@ -24,7 +28,9 @@ import {
     MdCheckboxModule,
     MdGridListModule,
     MdIconModule,
+    MdMenuModule,
     MdSelectModule,
+    MdToolbarModule,
     MdTooltipModule,
   ],
 })
