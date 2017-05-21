@@ -1,12 +1,57 @@
 <md-toolbar color="primary">
-	<span>JD Store</span>
+  <span>JD Store</span>
 
-	<span style="width: 50"></span>
-	<button md-button class='nav-link' routerLink="/home" routerLinkActive="active">
-	Home</button>
-	<button md-button class='nav-link' routerLink="/other" routerLinkActive="active">
-	Other</button>
-    <span class="example-spacer"></span>
-    <md-icon class="example-icon">favorite</md-icon>
-    <md-icon class="example-icon">delete</md-icon>
+  <button md-button class="nav-link"
+      routerLink="/home"
+      routerLinkActive="active">
+    Home
+  </button>
+  <button md-button class="nav-link"
+      routerLink="/other"
+      routerLinkActive="active">
+    Other
+  </button>
+
+  <span class="example-spacer"></span>
+
+  <span *ngIf="signedIn()">
+    <button md-button class="nav-link narrow-button"
+        routerLink="#"
+        routerLinkActive="active">
+    <md-icon>shopping_cart</md-icon>
+    </button>
+
+    <span style="zoom:70%">
+      Hi, {{this._tokenService.currentUserData?.email}}
+    </span>
+
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>history</md-icon> <span>Orders history</span>
+      </button>
+      <button md-menu-item disabled>
+        <md-icon>account_circle</md-icon> <span>Profile</span>
+      </button>
+      <hr>
+      <button md-menu-item (click)="signOut()">
+        <md-icon>exit_to_app</md-icon> <span>Sign out</span>
+      </button>
+    </md-menu>
+  </span>
+
+  <span *ngIf="!signedIn()">
+    <button md-button class="nav-link narrow-button"
+        routerLink="/users/sign_in"
+        routerLinkActive="active">
+      Log In
+    </button>
+    <button md-button class="nav-link narrow-button"
+        routerLink="/users/sign_up"
+        routerLinkActive="active">
+      Sign Up
+    </button>
+  </span>
 </md-toolbar>

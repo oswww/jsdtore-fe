@@ -1,0 +1,39 @@
+<md-card class="example-card">
+  <md-card-header>
+    <md-card-title>
+      <h2>Log In</h2>
+    </md-card-title>
+  </md-card-header>
+
+  <md-card-content>
+    <form #signInForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <md-input-container>
+        <md-icon md-prefix>email</md-icon>
+        <input mdInput type="email"
+            placeholder="Email"
+            required
+            [(ngModel)]="signInData.email"
+            name="email">
+        <md-error>Invalid Email</md-error>
+      </md-input-container>
+
+      <md-input-container>
+        <md-icon md-prefix>lock</md-icon>
+        <input mdInput type="password"
+            placeholder="Password"
+            required minlength="8"
+            [(ngModel)]="signInData.password"
+            name="password">
+        <md-error>Password should contain at least 8 charactors</md-error>
+      </md-input-container>
+
+      <button md-raised-button
+          type="submit"
+          [disabled]="!signInForm.form.valid">Log In</button>
+
+    </form>
+  </md-card-content>
+</md-card>
+
+{{error?._body}}

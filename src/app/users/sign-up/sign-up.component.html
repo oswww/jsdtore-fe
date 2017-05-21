@@ -1,0 +1,48 @@
+<md-card class="example-card">
+  <md-card-header>
+    <md-card-title>
+      <h2>Sign Up</h2>
+    </md-card-title>
+  </md-card-header>
+
+  <md-card-content>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <md-input-container>
+        <md-icon md-prefix>email</md-icon>
+        <input mdInput type="email"
+            placeholder="Email"
+            required
+            [(ngModel)]="registerData.email"
+            name="email">
+        <md-error>Invalid Email</md-error>
+      </md-input-container>
+
+      <md-input-container>
+        <md-icon md-prefix>lock</md-icon>
+        <input mdInput type="password"
+            placeholder="Password"
+            required minlength="8"
+            [(ngModel)]="registerData.password"
+            name="password">
+        <md-error>Password should contain at least 8 charactors</md-error>
+      </md-input-container>
+
+      <md-input-container>
+        <md-icon md-prefix>lock</md-icon>
+        <input mdInput type="password"
+            placeholder="Password Confirmation"
+            required minlength="8"
+            [(ngModel)]="registerData.passwordConfirmation"
+            name="passwordConfirmation">
+        <md-error>Password should contain at least 8 charactors</md-error>
+      </md-input-container>
+
+      <button md-raised-button
+          type="submit"
+          [disabled]="!registerForm.form.valid">Sign Up</button>
+    </form>
+  </md-card-content>
+</md-card>
+
+{{error?._body}}

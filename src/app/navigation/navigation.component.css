@@ -9,3 +9,7 @@
 .nav-link.active {
   background-color: #7e57c2;
 }
+
+button.narrow-button {
+  min-width: 0;
+}

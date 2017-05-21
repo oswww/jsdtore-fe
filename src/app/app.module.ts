@@ -8,16 +8,22 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { UsedMaterialModule } from './modules/material.module';
 import 'hammerjs'
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Angular2TokenService } from 'angular2-token';
+
+import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SignUpComponent } from './users/sign-up/sign-up.component';
+import { SignInComponent } from './users/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     NavigationComponent,
+    SignUpComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     FlexLayoutModule,
     UsedMaterialModule,
   ],
-  providers: [],
+  providers: [
+    Angular2TokenService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
