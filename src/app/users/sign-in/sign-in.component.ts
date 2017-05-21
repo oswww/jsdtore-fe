@@ -17,13 +17,12 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     if (this._tokenService.userSignedIn()) {
-      this.location.go("/home");
+      this.location.back();
     }
   }
 
   // Submit Data to Backend
   onSubmit() {
-
     this.error = null;
 
     this._tokenService.signIn(this.signInData).subscribe(

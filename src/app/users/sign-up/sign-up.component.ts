@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
 import { Angular2TokenService, RegisterData } from 'angular2-token';
 
 @Component({
@@ -9,18 +8,16 @@ import { Angular2TokenService, RegisterData } from 'angular2-token';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-
   registerData: RegisterData = <RegisterData>{};
   error: any;
 
   constructor(
     private _tokenService: Angular2TokenService,
-    private location: Location,
-    private router: Router) {}
+    private location: Location) {}
 
   ngOnInit() {
     if (this._tokenService.userSignedIn()) {
-      this.router.navigate(["/home"]);
+      this.location.back();
     }
   }
 
